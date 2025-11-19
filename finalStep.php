@@ -1,28 +1,24 @@
 <?php
 include("finalStepHeader.html");
 
-//translate the comments below into PHP code underneath each comment
+session_start();
 
-//start a session
-
-//echo the passenger's firstname from the appropriate session variable
-
+echo $_SESSION['passengerFN'];
 echo "<BR>";
 
-//echo the passenger's surname from the appropriate session variable
-
+echo $_SESSION['passengerSN'];
 echo "<BR>";
 
-// if the luggage session variable is on
 
-    //echo the amount of bags under ten kilos the passenger is bringing
-    
+if (isset($_SESSION['luggage'])){
+   
+    echo $_SESSION['subTenKG'];
     echo "<BR>";
-    
-    //echo the amount of bags over ten kilos the passenger is bringing
-    
-//end if block
+   
+  
+    echo $_SESSION['overTenKG'];
 
+}
 ?>
 </h4></div></div>
 <form method="POST" action="confirm.php">
@@ -33,10 +29,10 @@ echo "<BR>";
         </div>
     </div>
    
-        
+       
       <div class="col-sm-12 text-center">
         <button type="submit" class="btn btn-default">Continue</button>
       </div>
     </div>
-    
+   
 </form>
